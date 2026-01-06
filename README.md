@@ -3,7 +3,8 @@ Cross-Modal Temporal Attention for Story Reasoning
 
 A TensorFlow implementation of a Cross-Modal Temporal Attention (CMTA) model that learns to understand short visual stories using image sequences, captions, and optional reasoning text.
 The system integrates image features, caption embeddings, cross-modal fusion, temporal GRU, and a temporal attention layer to generate coherent next-step descriptions.
- 1. Overview
+
+ 1. OVERVIEW
 
 This project focuses on story understanding from multimodal data.
 Given:
