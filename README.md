@@ -1,26 +1,34 @@
 # dnnls-visual-storytelling
+Author : Keesari Rohith Goud
 Cross-Modal Temporal Attention for Story Reasoning
-#Introduction and Problem Statement 
-This project is developed as part of the Deep Neural Networks & Learning Systems (DNNLS) course and aims to improve visual storytelling models. Existing models often fail to understand the sequence of events across multiple images. To overcome this, we enhance the storytelling system using multimodal features, temporal modeling, and attention mechanisms. The proposed model can better understand image sequences and generate more coherent and meaningful story predictions.
 
-#Problem Definition
+#**Introduction and Problem Statement **
+```
+This project is developed as part of the Deep Neural Networks & Learning Systems (DNNLS) course and aims to improve visual storytelling models. Existing models often fail to understand the sequence of events across multiple images. To overcome this, we enhance the storytelling system using multimodal features, temporal modeling, and attention mechanisms. The proposed model can better understand image sequences and generate more coherent and meaningful story predictions.
+```
+#**Problem Definition**
+```
 The system integrates cross-modal fusion of image and text features with GRU-based temporal modeling and a temporal attention mechanism to generate coherent and context-aware multimodal story continuations.
+```
 
 Evaluation Metrics
+```
 For evaluating storytelling performance, test loss and perplexity are used to measure prediction confidence, while BLEU-4 is applied to assess overlap between generated and reference captions. Qualitative analysis is additionally used to examine narrative coherence and temporal consistency.
-
-#Methods
-We use convolutional image encoders and BiLSTM-based text encoders to extract visual and linguistic features from image–caption pairs. These features are fused using a Cross-Modal Attention mechanism to align visual and textual information at each time step. A GRU-based temporal encoder models the narrative flow across frames, followed by a Cross-Modal Temporal Attention layer that highlights the most informative moments in the story.
-
-Model performance is evaluated using test loss, perplexity, and BLEU score, and the dataset is split into 70/15/15 for training, validation, and testing.
-
-#Model Architecture Overview
+```
+#**Methods**
+```
+We use convolutional image encoders and BiLSTM-based text encoders to extract visual and linguistic features from image–caption pairs. These features are fused using a Cross-Modal Attention mechanism to align visual and textual information at each time step. A GRU-based temporal encoder models the narrative flow across frames, followed by a Cross-Modal Temporal Attention layer that highlights the most informative moments in the story.Model performance is evaluated using test loss, perplexity, and BLEU score, and the dataset is split into 70/15/15 for training, validation, and testing.
+```
+#**Model Architecture Overview**
+```
 The proposed architecture incorporates a convolutional neural network (CNN)–based visual encoder and a BiLSTM-based text encoder to extract visual and linguistic representations from image–caption pairs. These features are integrated through a Cross-Modal Attention mechanism, followed by a GRU-based temporal encoder to model narrative progression across image sequences. A Cross-Modal Temporal Attention layer selectively emphasizes the most informative time steps, and an LSTM decoder generates coherent story continuations. The model is trained with early stopping and evaluated using test loss, perplexity, and BLEU score to assess storytelling performance.
-
-# Reasoning aware attention
+```
+#** Reasoning aware attention**
+```
 The proposed mechanism enables the model to selectively focus on relevant visual features and textual context at different time steps through learned temporal relationships. This is implemented using a Cross-Modal Temporal Attention module applied after GRU-based sequence modeling, which helps the model capture cause–effect relationships between frames and maintain narrative coherence during story caption generation.
-
-#Code Snippet(simplified)
+```
+#**Code Snippet(simplified)**
+```
 """
 model.py
 
@@ -215,34 +223,36 @@ class ReasonEncoder(layers.Layer):
         emb = self.embedding(x)  # (B, Tr, E)
         reason_feat = self.bilstm(emb)  # (B, H_reason)
         return reason_feat
+```
 
-
-#Results
+#**Results**
+```
 
 The enhanced model produces more coherent and context-aware story predictions compared to the baseline model. The Cross-Modal Temporal Attention mechanism improves multimodal temporal reasoning by allowing the model to focus on the most relevant frames and captions, while GRU-based sequence modeling strengthens narrative flow. These improvements result in better story continuity and semantic alignment across frames, with consistent gains reflected in reduced test loss, stable perplexity, and qualitative improvements despite low BLEU scores due to long and markup-heavy captions.
-
-#Quantitavtive analysis
-
+```
+#**Quantitavtive analysis**
+```
 Results/loss_curve.png
-
-#Qualitative analysis
-
+```
+#**Qualitative analysis**
+```
 Results/sample generations.png
 
+```
 
-
-#conclusion
+#**conclusion**
+```
 The enhanced model produces more coherent story predictions than the baseline. Cross-Modal Temporal Attention improves temporal reasoning and multimodal alignment, resulting in better story continuity and consistent performance gains.
-
-#Future work
-
+```
+#**Future work**
+```
 Scaling the model to handle longer and more complex visual stories.
 
 Improving story generation quality using advanced attention and temporal modeling techniques.
 
 Extending the framework to video-based inputs instea
 
-
+```
 
 
 
