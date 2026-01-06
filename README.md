@@ -1,6 +1,6 @@
 # dnnls-visual-storytelling
 Author : Keesari Rohith Goud
-Cross-Modal Temporal Attention for Story Reasoning
+
 
 #**Introduction and Problem Statement **
 ```
